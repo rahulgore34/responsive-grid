@@ -1,0 +1,33 @@
+$colors: red, blue, green, yellow, aqua,gray;
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+h1 {
+  margin: 5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+
+  .card {
+    transition: transform 1s;
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}) {
+        background: nth($colors, $i );
+      }
+    }
+
+    &:hover{
+      transform: translateY(-10px);
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
